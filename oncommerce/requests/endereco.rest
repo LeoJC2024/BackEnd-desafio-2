@@ -1,0 +1,93 @@
+###
+# 1. Criar um Cliente (se ainda não tiver um com o qual associar o endereço)
+POST http://localhost:8080/api/clientes
+Content-Type: application/json
+
+{
+    "nome": "Novo Cliente para Endereço",
+    "email": "endereco.teste@email.com",
+    "telefone": "9876543210",
+    "dataNascimento": "1990-05-15"
+}
+
+###
+# 2. Obter um Cliente E seus Endereços
+# (O endpoint de cliente agora retornará a lista de endereços associados)
+GET http://localhost:8080/api/clientes/1
+# Substitua '1' pelo ID de um cliente existente que você criou ou que já está no banco.
+
+###
+# 3. Adicionar um Endereço para um Cliente Específico
+# Substitua '1' pelo ID do cliente ao qual você quer associar o endereço.
+POST http://localhost:8080/api/enderecos/cliente/1
+Content-Type: application/json
+
+{
+    "rua": "Avenida Principal",
+    "numero": "1000",
+    "complemento": "Bloco B",
+    "bairro": "Centro Novo",
+    "cidade": "Minha Cidade",
+    "estado": "MG",
+    "cep": "30000-000",
+    "pais": "Brasil",
+    "tipoEndereco": "Residencial"
+}
+
+###
+# 4. Adicionar outro Endereço para o mesmo Cliente
+# Exemplo para testar múltiplos endereços.
+# Substitua '1' pelo ID do cliente.
+POST http://localhost:8080/api/enderecos/cliente/1
+Content-Type: application/json
+
+{
+    "rua": "Rua do Trabalho",
+    "numero": "50",
+    "complemento": "Sala 302",
+    "bairro": "Comercial",
+    "cidade": "Sua Cidade",
+    "estado": "SP",
+    "cep": "05000-000",
+    "pais": "Brasil",
+    "tipoEndereco": "Comercial"
+}
+
+###
+# 5. Obter Todos os Endereços Cadastrados (independentemente do cliente)
+GET http://localhost:8080/api/enderecos
+
+###
+# 6. Obter Todos os Endereços de um Cliente Específico
+# Substitua '1' pelo ID do cliente.
+GET http://localhost:8080/api/enderecos/cliente/1
+
+###
+# 7. Obter um Endereço Específico por ID
+# Você precisará do ID de um endereço que foi criado (verifique no seu banco de dados ou na resposta do POST).
+# Substitua '1' pelo ID do endereço.
+GET http://localhost:8080/api/enderecos/1
+
+###
+# 8. Atualizar um Endereço Existente
+# Substitua '1' pelo ID do endereço que você quer atualizar.
+PUT http://localhost:8080/api/enderecos/1
+Content-Type: application/json
+
+{
+    "rua": "Avenida Principal Atualizada",
+    "numero": "1001",
+    "complemento": "Prédio C",
+    "bairro": "Centro Velho",
+    "cidade": "Outra Cidade",
+    "estado": "RJ",
+    "cep": "20000-000",
+    "pais": "Brasil",
+    "tipoEndereco": "Entrega"
+    # O "cliente" não precisa ser enviado aqui, pois ele é associado via URL ou já existe.
+}
+
+###
+# 9. Deletar um Endereço Específico
+# Substitua '2' pelo ID do endereço que você quer deletar.
+DELETE http://localhost:8080/api/enderecos/3
