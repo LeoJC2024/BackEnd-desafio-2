@@ -3,7 +3,7 @@ package com.example.oncommerce.services;
 
 import com.example.oncommerce.models.Cliente;
 import com.example.oncommerce.models.Endereco;
-import com.example.oncommerce.repositories.ClienteRepository; // Assumindo que você tem um ClienteRepository
+import com.example.oncommerce.repositories.ClienteRepository; 
 import com.example.oncommerce.repositories.EnderecoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -49,9 +49,7 @@ public class EnderecoService {
             enderecoExistente.setBairro(enderecoAtualizado.getBairro());
             enderecoExistente.setCidade(enderecoAtualizado.getCidade());
             enderecoExistente.setEstado(enderecoAtualizado.getEstado());
-            enderecoExistente.setCep(enderecoAtualizado.getCep());
-            enderecoExistente.setPais(enderecoAtualizado.getPais());
-            enderecoExistente.setTipoEndereco(enderecoAtualizado.getTipoEndereco());
+            enderecoExistente.setCep(enderecoAtualizado.getCep());           
             // Não atualize o cliente aqui diretamente, a menos que seja para mudar o proprietário
             return enderecoRepository.save(enderecoExistente);
         }).orElseThrow(() -> new RuntimeException("Endereço não encontrado com o ID: " + id));

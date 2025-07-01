@@ -1,7 +1,7 @@
 // src/main/java/com/example/oncommerce/models/Endereco.java
 package com.example.oncommerce.models;
 
-import com.fasterxml.jackson.annotation.JsonBackReference; // Importe esta anotação
+import com.fasterxml.jackson.annotation.JsonBackReference; 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,9 +23,7 @@ public class Endereco {
     private String cidade;
     private String estado;
     private String cep;
-    private String pais;
-    private String tipoEndereco;
-
+    
     @JsonBackReference // ESTA É A ADIÇÃO CHAVE
     @ManyToOne
     @JoinColumn(name = "cliente_id")
@@ -34,7 +32,7 @@ public class Endereco {
     // Construtores
     public Endereco() {}
 
-    public Endereco(Integer id, String rua, String numero, String complemento, String bairro, String cidade, String estado, String cep, String pais, String tipoEndereco, Cliente cliente) {
+    public Endereco(Integer id, String rua, String numero, String complemento, String bairro, String cidade, String estado, String cep, Cliente cliente) {
         this.id = id;
         this.rua = rua;
         this.numero = numero;
@@ -42,9 +40,7 @@ public class Endereco {
         this.bairro = bairro;
         this.cidade = cidade;
         this.estado = estado;
-        this.cep = cep;
-        this.pais = pais;
-        this.tipoEndereco = tipoEndereco;
+        this.cep = cep;        
         this.cliente = cliente;
     }
 
@@ -71,13 +67,7 @@ public class Endereco {
     public void setEstado(String estado) { this.estado = estado; }
 
     public String getCep() { return cep; }
-    public void setCep(String cep) { this.cep = cep; }
-
-    public String getPais() { return pais; }
-    public void setPais(String pais) { this.pais = pais; }
-
-    public String getTipoEndereco() { return tipoEndereco; }
-    public void setTipoEndereco(String tipoEndereco) { this.tipoEndereco = tipoEndereco; }
+    public void setCep(String cep) { this.cep = cep; }  
 
     public Cliente getCliente() { return cliente; }
     public void setCliente(Cliente cliente) { this.cliente = cliente; }

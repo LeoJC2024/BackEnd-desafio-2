@@ -1,16 +1,4 @@
 ###
-# 1. Criar um Cliente (se ainda não tiver um com o qual associar o endereço)
-POST http://localhost:8080/api/clientes
-Content-Type: application/json
-
-{
-    "nome": "Novo Cliente para Endereço",
-    "email": "endereco.teste@email.com",
-    "telefone": "9876543210",
-    "dataNascimento": "1990-05-15"
-}
-
-###
 # 2. Obter um Cliente E seus Endereços
 # (O endpoint de cliente agora retornará a lista de endereços associados)
 GET http://localhost:8080/api/clientes/1
@@ -29,9 +17,7 @@ Content-Type: application/json
     "bairro": "Centro Novo",
     "cidade": "Minha Cidade",
     "estado": "MG",
-    "cep": "30000-000",
-    "pais": "Brasil",
-    "tipoEndereco": "Residencial"
+    "cep": "30000-000"  
 }
 
 ###
@@ -48,9 +34,7 @@ Content-Type: application/json
     "bairro": "Comercial",
     "cidade": "Sua Cidade",
     "estado": "SP",
-    "cep": "05000-000",
-    "pais": "Brasil",
-    "tipoEndereco": "Comercial"
+    "cep": "05000-000"  
 }
 
 ###
@@ -82,12 +66,9 @@ Content-Type: application/json
     "cidade": "Outra Cidade",
     "estado": "RJ",
     "cep": "20000-000",
-    "pais": "Brasil",
-    "tipoEndereco": "Entrega"
-    # O "cliente" não precisa ser enviado aqui, pois ele é associado via URL ou já existe.
+    "pais": "Brasil"
 }
-
 ###
 # 9. Deletar um Endereço Específico
 # Substitua '2' pelo ID do endereço que você quer deletar.
-DELETE http://localhost:8080/api/enderecos/3
+DELETE http://localhost:8080/api/enderecos/6

@@ -1,7 +1,7 @@
 // src/main/java/com/example/oncommerce/models/Cliente.java
 package com.example.oncommerce.models;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference; // Importe esta anotação
+import com.fasterxml.jackson.annotation.JsonManagedReference; 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,10 +18,9 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nome;
-    private String email;
-    // Adicione os campos que você tem na sua classe Cliente (telefone, dataNascimento, etc.)
-    private String telefone; // Exemplo
-    private String dataNascimento; // Exemplo
+    private String email;    
+    private String telefone; 
+    private String dataNascimento; 
 
     @JsonManagedReference // ESTA É A ADIÇÃO CHAVE
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)

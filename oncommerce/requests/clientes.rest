@@ -1,0 +1,30 @@
+GET http://localhost:8080/api/clientes
+
+###
+
+GET http://localhost:8080/api/clientes/3
+
+###
+POST  http://localhost:8080/api/clientes
+Content-Type: application/json
+
+{
+    "nome": "",
+    "email": "",
+    "telefone": "1234567892",
+    "dataNascimento": "2002-01-10"
+}
+
+###
+PUT  http://localhost:8080/api/clientes/3
+Content-Type: application/json
+
+{
+    "nome": "Sebatião Fidelis",
+    "email": "sebastiao@gmail.com",
+    "telefone": "1234567896",
+    "dataNascimento": "2005-01-10"
+}
+
+###
+DELETE   http://localhost:8080/api/clientes/7
