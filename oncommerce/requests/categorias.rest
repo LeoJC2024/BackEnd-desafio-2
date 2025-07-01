@@ -1,0 +1,31 @@
+### Criar Categoria
+POST http://localhost:8080/api/categorias
+Content-Type: application/json
+
+{
+    "nome": "Eletrônicos"
+}
+
+### Criar Outra Categoria
+POST http://localhost:8080/api/categorias
+Content-Type: application/json
+
+{
+    "nome": "Livros"
+}
+
+### Obter Todas as Categorias
+GET http://localhost:8080/api/categorias
+
+### Obter Categoria por ID (ex: ID 1)
+GET http://localhost:8080/api/categorias/1
+
+### Atualizar Categoria (ex: ID 1)
+PUT http://localhost:8080/api/categorias/1
+Content-Type: application/json
+
+{
+    "nome": "Eletrônicos e Gadgets"
+}
+### Deletar Categoria (ex: ID 2 - Cuidado: se tiver produtos, pode dar erro dependendo da sua configuração DB)
+DELETE http://localhost:8080/api/categorias/2

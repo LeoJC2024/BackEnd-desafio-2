@@ -1,0 +1,49 @@
+### Criar Cliente
+POST  http://localhost:8080/api/clientes
+Content-Type: application/json
+
+{
+    "nome": "José Aldo",
+    "email": "josealdo@gmail.com",
+    "telefone": "123456789",
+    "dataNascimento": "2002-01-10"
+}
+### Criar outro Cliente
+POST  http://localhost:8080/api/clientes
+Content-Type: application/json
+
+{
+   "nome": "Sebatião Fidelis",
+    "email": "sebastiao@gmail.com",
+    "telefone": "987654321",
+    "dataNascimento": "2005-01-10"
+}
+### Criar Cliente sem nome ou email não aceita
+POST  http://localhost:8080/api/clientes
+Content-Type: application/json
+
+{
+    "nome": "",
+    "email": "",
+    "telefone": "1234567892",
+    "dataNascimento": "2002-01-10"
+}
+### Obter todos os Clientes
+GET http://localhost:8080/api/clientes
+
+### Obter Cliente por id
+GET http://localhost:8080/api/clientes/3
+
+### Atualizar Cliente por id
+PUT  http://localhost:8080/api/clientes/1
+Content-Type: application/json
+
+{
+    "nome": "José Aldo",
+    "email": "josealdo2025@gmail.com",
+    "telefone": "123456789",
+    "dataNascimento": "2002-01-10"
+}
+
+### Deletar Cliente por id
+DELETE http://localhost:8080/api/clientes/2

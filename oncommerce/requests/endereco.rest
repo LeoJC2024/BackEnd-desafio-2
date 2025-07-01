@@ -1,0 +1,66 @@
+### Criar endereço ao cliente 1
+POST http://localhost:8080/api/enderecos/cliente/1
+Content-Type: application/json
+
+{
+    "rua": "Avenida Brasil",
+    "numero": "2025",
+    "complemento": "Casa",
+    "bairro": "Centro ",
+    "cidade": "Florianopolis",
+    "estado": "MG",
+    "cep": "30000-000"  
+}
+### Criar outro endereço ao cliente 1
+POST http://localhost:8080/api/enderecos/cliente/1
+Content-Type: application/json
+
+{
+    "rua": "Avenida Chile",
+    "numero": "200",
+    "complemento": "Casa",
+    "bairro": "Centro",
+    "cidade": "Maceio",
+    "estado": "Alagoas",
+    "cep": "20000-000"  
+}
+### Criar endereço ao cliente 2
+POST http://localhost:8080/api/enderecos/cliente/2
+Content-Type: application/json
+
+{
+    "rua": "Colombo",
+    "numero": "50",
+    "complemento": "Sala 302",
+    "bairro": "Comercial",
+    "cidade": "Sâo Paulo",
+    "estado": "SP",
+    "cep": "05000-000"  
+}
+### Obter todos os Clientes
+GET http://localhost:8080/api/clientes
+
+### Obter Todos os Endereços Cadastrados (independentemente do cliente)
+GET http://localhost:8080/api/enderecos
+
+### Obter Todos os Endereços de um Cliente Específico
+GET http://localhost:8080/api/enderecos/cliente/1
+
+### Obter um Endereço Específico por ID
+GET http://localhost:8080/api/enderecos/1
+
+### Atualizar um Endereço Existente
+PUT http://localhost:8080/api/enderecos/1
+Content-Type: application/json
+
+{
+    "rua": "Colombo",
+    "numero": "50",
+    "complemento": "Sala 500",
+    "bairro": "Comercial",
+    "cidade": "Sâo Paulo",
+    "estado": "SP",
+    "cep": "05000-000"  
+}
+### Deletar um Endereço Específico
+DELETE http://localhost:8080/api/enderecos/6

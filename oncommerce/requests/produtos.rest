@@ -1,0 +1,43 @@
+### Criar Produto (vinculado a uma categoria existente, ex: categoriaId = 1)
+POST http://localhost:8080/api/produtos/categoria/1
+Content-Type: application/json
+
+{
+    "nome": "Smartphone X",
+    "descricao": "Um smartphone de última geração.",
+    "preco": 2500.00,
+    "estoque": 50
+}
+
+### Criar Outro Produto na mesma Categoria (ex: categoriaId = 1)
+POST http://localhost:8080/api/produtos/categoria/1
+Content-Type: application/json
+
+{
+    "nome": "Smart TV 4K",
+    "descricao": "TV com resolução 4K e funcionalidades inteligentes.",
+    "preco": 3200.00,
+    "estoque": 30
+}
+
+### Obter Todos os Produtos
+GET http://localhost:8080/api/produtos
+
+### Obter Produto por ID (ex: ID 1)
+GET http://localhost:8080/api/produtos/1
+
+### Atualizar Produto (ex: ID 1)
+PUT http://localhost:8080/api/produtos/1
+Content-Type: application/json
+
+{
+    "nome": "Smartphone X Pro",
+    "descricao": "Versão Pro do smartphone X, com câmera aprimorada.",
+    "preco": 2800.00,
+    "estoque": 45
+}
+### Consultar Produtos de uma Categoria Específica (ex: categoriaId = 1)
+GET http://localhost:8080/api/categorias/3/produtos
+
+### Deletar Produto (ex: ID 2)
+DELETE http://localhost:8080/api/produtos/2
